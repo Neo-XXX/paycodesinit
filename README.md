@@ -16,8 +16,6 @@ cd server && npm install
 cd ../client && npm install
 ```
 
-2. Create a `.env` file in `server/` based on `.env.example` and start the API:
-
 ```bash
 npm run dev
 ```
@@ -29,6 +27,7 @@ npm run dev
 ```
 
 The client will be available at `http://localhost:3000` and the API at `http://localhost:5000`.
+
 
 ## Core Features (planned)
 
