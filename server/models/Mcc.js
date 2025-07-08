@@ -5,4 +5,5 @@ const MccSchema = new mongoose.Schema({
   category: String
 });
 
-module.exports = mongoose.model('Mcc', MccSchema, 'mcc');
+module.exports = mongoose.model('Mcc', MccSchema, 'stripe_list');
+
