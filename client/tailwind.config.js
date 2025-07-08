@@ -8,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],
       },
+      colors: {
+        lightspeed: '#e81c1c',
+      },
     },
   },
   plugins: [],

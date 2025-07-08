@@ -1,21 +1,23 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
-import FeeCalculator from './pages/FeeCalculator';
+import MccLookup from './pages/MccLookup';
+import ProcessorCodes from './pages/ProcessorCodes';
+import ChargebackCodes from './pages/ChargebackCodes';
 import StatementUpload from './pages/StatementUpload';
-import CodeLookup from './pages/CodeLookup';
-import Reports from './pages/Reports';
+import FeeCalculator from './pages/FeeCalculator';
+import Settings from './pages/Settings';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/calculator" element={<FeeCalculator />} />
-          <Route path="/statement" element={<StatementUpload />} />
-          <Route path="/codes" element={<CodeLookup />} />
-          <Route path="/reports" element={<Reports />} />
+          <Route path="/" element={<MccLookup />} />
+          <Route path="/processor-codes" element={<ProcessorCodes />} />
+          <Route path="/chargeback-codes" element={<ChargebackCodes />} />
+          <Route path="/statement-analysis" element={<StatementUpload />} />
+          <Route path="/fee-checker" element={<FeeCalculator />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </Layout>
     </BrowserRouter>
