@@ -3,7 +3,7 @@ import Topbar from './Topbar';
 
 export default function Layout({ children }) {
   return (
-    <div className="flex h-screen">
+    <div className="flex min-h-screen bg-[#f6f9fc]">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Topbar />

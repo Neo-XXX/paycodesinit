@@ -10,7 +10,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="bg-white text-gray-700 p-4 w-60 space-y-2">
+    <aside className="bg-white border-r border-gray-200 text-gray-800 p-6 w-64 space-y-4">
       <h2 className="text-xl font-bold mb-4">PayCodes</h2>
       <nav className="space-y-1">
         {navItems.map((item) => (
@@ -18,7 +18,7 @@ export default function Sidebar() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `block rounded-xl p-3 hover:text-blue-600 ${isActive ? 'text-blue-600 font-medium' : ''}`
+              `block rounded-lg px-3 py-2 hover:bg-gray-50 ${isActive ? 'text-indigo-600 font-medium' : 'text-gray-600'}`
             }
           >
             {item.label}
@@ -26,7 +26,7 @@ export default function Sidebar() {
         ))}
       </nav>
       <div className="pt-4">
-        <button className="w-full bg-indigo-600 text-white rounded-xl p-3 mt-4">Upgrade Plan</button>
+        <button className="w-full bg-indigo-600 text-white rounded-lg p-3 mt-4">Upgrade Plan</button>
       </div>
     </aside>
   );
