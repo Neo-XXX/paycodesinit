@@ -88,7 +88,7 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed top-0 left-0 h-screen w-20 bg-white border-r shadow-sm flex flex-col items-center py-4 space-y-6 z-20">
+    <aside className="fixed top-0 left-0 h-screen w-20 bg-white border-r border-gray-200 shadow-sm flex flex-col items-center py-6 space-y-8 z-20">
       <h2 className="text-lg font-bold">PC</h2>
       <nav className="flex flex-col space-y-6 mt-4">
         {navItems.map((item) => (
@@ -96,7 +96,7 @@ export default function Sidebar() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs ${isActive ? 'text-indigo-600 font-medium' : 'text-gray-500'}`
+              `flex flex-col items-center text-xs hover:text-indigo-600 ${isActive ? 'text-indigo-600 font-medium' : 'text-gray-500'}`
             }
           >
             <item.icon />

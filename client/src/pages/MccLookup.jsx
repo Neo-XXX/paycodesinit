@@ -52,18 +52,18 @@ export default function MccLookup() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border">
+    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
       <form onSubmit={handleSearch} className="flex space-x-2">
         <input
           type="text"
           placeholder="Search MCC"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="border rounded-xl p-2 w-full"
+          className="border border-gray-300 rounded-md p-2 w-full"
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white rounded-xl px-4"
+          className="bg-indigo-600 text-white rounded-md px-4"
         >
           Search
         </button>
@@ -71,7 +71,7 @@ export default function MccLookup() {
 
       <div className="mt-4 space-y-2">
         {results.map((item) => (
-          <div key={item._id} className="border rounded p-2">
+          <div key={item._id} className="border border-gray-200 rounded-md p-2">
             <p className="font-medium">MCC {item.mcc_code}</p>
             <p className="text-sm">{item.category}</p>
           </div>
