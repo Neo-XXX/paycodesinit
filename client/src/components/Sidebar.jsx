@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom';
 
 const navItems = [
-  { to: '/', label: 'Dashboard' },
-  { to: '/calculator', label: 'Fee Calculator' },
-  { to: '/statement', label: 'Statement Analyzer' },
-  { to: '/codes', label: 'MCC + Code Lookup' },
-  { to: '/reports', label: 'Saved Reports' },
+  { to: '/', label: 'MCC Code Lookup' },
+  { to: '/processor-codes', label: 'Processor Response Codes' },
+  { to: '/chargeback-codes', label: 'Chargeback Codes' },
+  { to: '/statement-analysis', label: 'Statement Analysis' },
+  { to: '/fee-checker', label: 'Transaction Fee Checker' },
+  { to: '/settings', label: 'Settings' },
 ];
 
 export default function Sidebar() {
@@ -18,16 +19,13 @@ export default function Sidebar() {
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `block rounded-lg px-3 py-2 hover:bg-gray-50 ${isActive ? 'text-indigo-600 font-medium' : 'text-gray-600'}`
+              `block rounded-lg px-3 py-2 hover:bg-gray-100 ${isActive ? 'text-lightspeed font-medium' : 'text-gray-600'}`
             }
           >
             {item.label}
           </NavLink>
         ))}
       </nav>
-      <div className="pt-4">
-        <button className="w-full bg-indigo-600 text-white rounded-lg p-3 mt-4">Upgrade Plan</button>
-      </div>
     </aside>
   );
 }

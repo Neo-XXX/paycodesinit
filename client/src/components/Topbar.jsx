@@ -5,7 +5,7 @@ export default function Topbar() {
         <input
           type="text"
           placeholder="Search"
-          className="border rounded-lg p-2 w-full bg-gray-50"
+          className="border rounded-lg p-2 w-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lightspeed"
         />
       </div>
       <div className="space-x-4 flex items-center">
