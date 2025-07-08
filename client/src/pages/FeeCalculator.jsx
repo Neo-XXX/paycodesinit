@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Card from '../components/Card';
 
 export default function FeeCalculator() {
   const [volume, setVolume] = useState('');
@@ -16,14 +17,14 @@ export default function FeeCalculator() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <form onSubmit={calculate} className="bg-white p-6 rounded-lg shadow-sm border space-y-4">
+      <Card as="form" onSubmit={calculate} className="space-y-4">
         <div>
           <label className="block mb-1">Monthly Volume</label>
           <input
             type="number"
             value={volume}
             onChange={(e) => setVolume(e.target.value)}
-            className="border rounded-xl p-2 w-full"
+            className="border border-gray-300 rounded-md p-2 w-full"
           />
         </div>
         <div>
@@ -32,14 +33,14 @@ export default function FeeCalculator() {
             type="number"
             value={ticket}
             onChange={(e) => setTicket(e.target.value)}
-            className="border rounded-xl p-2 w-full"
+            className="border border-gray-300 rounded-md p-2 w-full"
           />
         </div>
-        <button type="submit" className="bg-indigo-600 text-white rounded-md px-4 py-2">
+        <button type="submit" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md px-4 py-2">
           Calculate
         </button>
-      </form>
-      <div className="bg-white p-6 rounded-lg shadow-sm border flex flex-col justify-center items-center">
+      </Card>
+      <Card className="flex flex-col justify-center items-center">
         {rate !== null ? (
           <>
             <div className="text-lg">
@@ -51,7 +52,7 @@ export default function FeeCalculator() {
         ) : (
           <p className="text-gray-500">Enter details to calculate fees</p>
         )}
-      </div>
+      </Card>
     </div>
   );
 }

@@ -5,8 +5,9 @@
 @layer base {
   body {
     font-family: theme('fontFamily.sans');
-    background-color: #f8f9fb;
-    color: #333;
+    background-color: #f8fafc;
+    color: #374151;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
 }
