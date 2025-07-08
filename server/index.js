@@ -33,7 +33,9 @@ app.get('/api/mcc', async (req, res) => {
         { category: regex }
       ]
     };
-    const results = await Mcc.find(filter).limit(20);
+    const results = await Mcc.find({
+      $or: [{ mcc_code: q }, { category: regex }]
+    }).limit(20);
     res.json(results);
   } catch (err) {
     console.error('Search error', err);

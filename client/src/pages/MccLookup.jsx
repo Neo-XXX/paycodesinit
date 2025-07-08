@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function MccLookup() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [debounced, setDebounced] = useState('');
 
   const onSearchSubmit = (e) => {
+  const handleSearch = (e) => {
+
     if (e) e.preventDefault();
     setDebounced(query.trim());
   };
@@ -29,6 +33,10 @@ export default function MccLookup() {
           `${API_BASE_URL}/api/mcc?q=${encodeURIComponent(debounced)}`
         );
         const data = await response.json();
+        const res = await fetch(`${API_BASE_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
+        const res = await fetch(`${API_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
+        const data = await res.json();
+
         if (!cancelled) setResults(data);
       } catch (err) {
         console.error('Search failed', err);
@@ -43,6 +51,22 @@ export default function MccLookup() {
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm border">
       <form onSubmit={onSearchSubmit} className="flex space-x-2">
+
+  const handleSearch = async (e) => {
+    if (e) e.preventDefault();
+    if (!query.trim()) return;
+    try {
+      const res = await fetch(`${API_URL}/api/mcc?q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      setResults(data);
+    } catch (err) {
+      console.error('Search failed', err);
+    }
+  };
+
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-sm border">
+      <form onSubmit={handleSearch} className="flex space-x-2">
         <input
           type="text"
           placeholder="Search MCC"
