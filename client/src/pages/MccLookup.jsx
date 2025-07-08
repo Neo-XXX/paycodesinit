@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
@@ -9,6 +10,7 @@ export default function MccLookup() {
   const [results, setResults] = useState([]);
   const [debounced, setDebounced] = useState('');
 
+  const onSearchSubmit = (e) => {
   const handleSearch = (e) => {
     if (e) e.preventDefault();
     setDebounced(query.trim());
@@ -27,6 +29,7 @@ export default function MccLookup() {
     let cancelled = false;
     const search = async () => {
       try {
+        const res = await fetch(`${API_BASE_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
         const res = await fetch(`${API_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
         const data = await res.json();
         if (!cancelled) setResults(data);
@@ -40,6 +43,9 @@ export default function MccLookup() {
     };
   }, [debounced]);
 
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-sm border">
+      <form onSubmit={onSearchSubmit} className="flex space-x-2">
 
   const handleSearch = async (e) => {
     if (e) e.preventDefault();
