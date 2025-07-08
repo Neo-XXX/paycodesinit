@@ -1,3 +1,9 @@
+import Card from '../components/Card';
+
 export default function Reports() {
-  return <div className="p-4">Your saved reports will appear here.</div>;
+  return (
+    <Card>
+      <p className="text-gray-500">Your saved reports will appear here.</p>
+    </Card>
+  );
 }

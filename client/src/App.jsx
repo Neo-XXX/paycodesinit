@@ -6,6 +6,7 @@ import ChargebackCodes from './pages/ChargebackCodes';
 import StatementUpload from './pages/StatementUpload';
 import FeeCalculator from './pages/FeeCalculator';
 import Settings from './pages/Settings';
+import Reports from './pages/Reports';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/chargeback-codes" element={<ChargebackCodes />} />
           <Route path="/statement-analysis" element={<StatementUpload />} />
           <Route path="/fee-checker" element={<FeeCalculator />} />
+          <Route path="/reports" element={<Reports />} />
           <Route path="/settings" element={<Settings />} />
         </Routes>
       </Layout>

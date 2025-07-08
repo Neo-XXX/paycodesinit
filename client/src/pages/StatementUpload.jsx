@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Card from '../components/Card';
 
 export default function StatementUpload() {
   const [loading, setLoading] = useState(false);
@@ -16,14 +17,14 @@ export default function StatementUpload() {
   return (
     <div className="space-y-6">
       <div
-        className="border-2 border-dashed rounded-lg p-10 text-center bg-white"
+        className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center bg-white"
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
       >
         {loading ? 'Extracting data…' : 'Drag & drop statement PDF'}
       </div>
       {results && (
-        <div className="bg-white p-6 rounded-lg shadow-sm border">
+        <Card>
           <div className="flex justify-between">
             <h3 className="font-medium">Parsed Results</h3>
             <div>
@@ -34,7 +35,7 @@ export default function StatementUpload() {
           <ul className="mt-2 text-sm text-red-600 list-disc list-inside">
             <li>Junk fee detected: $10</li>
           </ul>
-        </div>
+        </Card>
       )}
     </div>
   );
