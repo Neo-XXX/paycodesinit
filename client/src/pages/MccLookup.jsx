@@ -1,10 +1,45 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export default function MccLookup() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const [debounced, setDebounced] = useState('');
+
+  const handleSearch = (e) => {
+    if (e) e.preventDefault();
+    setDebounced(query.trim());
+  };
+
+  useEffect(() => {
+    const id = setTimeout(() => setDebounced(query.trim()), 300);
+    return () => clearTimeout(id);
+  }, [query]);
+
+  useEffect(() => {
+    if (!debounced) {
+      setResults([]);
+      return;
+    }
+    let cancelled = false;
+    const search = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
+        const data = await res.json();
+        if (!cancelled) setResults(data);
+      } catch (err) {
+        console.error('Search failed', err);
+      }
+    };
+    search();
+    return () => {
+      cancelled = true;
+    };
+  }, [debounced]);
+
 
   const handleSearch = async (e) => {
     if (e) e.preventDefault();
@@ -42,6 +77,9 @@ export default function MccLookup() {
             <p className="text-sm">{item.category}</p>
           </div>
         ))}
+        {debounced && results.length === 0 && (
+          <p className="text-sm text-gray-500">No results found.</p>
+        )}
       </div>
     </div>
   );
