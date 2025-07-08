@@ -16,14 +16,14 @@ export default function StatementUpload() {
   return (
     <div className="space-y-6">
       <div
-        className="border-2 border-dashed rounded-2xl p-10 text-center bg-white"
+        className="border-2 border-dashed rounded-lg p-10 text-center bg-white"
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
       >
         {loading ? 'Extracting data…' : 'Drag & drop statement PDF'}
       </div>
       {results && (
-        <div className="bg-white p-4 rounded-2xl shadow-md">
+        <div className="bg-white p-6 rounded-lg shadow-sm border">
           <div className="flex justify-between">
             <h3 className="font-medium">Parsed Results</h3>
             <div>

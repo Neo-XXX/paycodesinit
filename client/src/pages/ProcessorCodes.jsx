@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function ProcessorCodes() {
   const [query, setQuery] = useState('');
   return (
-    <div className="bg-white p-4 rounded-2xl shadow-md">
+    <div className="bg-white p-6 rounded-lg shadow-sm border">
       <input
         type="text"
         placeholder="Search processor response"
