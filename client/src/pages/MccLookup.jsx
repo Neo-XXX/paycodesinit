@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function MccLookup() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
@@ -37,6 +39,19 @@ export default function MccLookup() {
       cancelled = true;
     };
   }, [debounced]);
+
+
+  const handleSearch = async (e) => {
+    if (e) e.preventDefault();
+    if (!query.trim()) return;
+    try {
+      const res = await fetch(`${API_URL}/api/mcc?q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      setResults(data);
+    } catch (err) {
+      console.error('Search failed', err);
+    }
+  };
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm border">
