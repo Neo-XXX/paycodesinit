@@ -1,11 +1,11 @@
 export default function Topbar() {
   return (
-    <header className="bg-white shadow p-4 flex justify-between items-center">
-      <div className="flex-1">
+    <header className="bg-white border-b border-gray-200 p-4 flex justify-between items-center">
+      <div className="flex-1 max-w-sm">
         <input
           type="text"
-          placeholder="Search..."
-          className="border rounded-xl p-2 w-full max-w-xs"
+          placeholder="Search"
+          className="border rounded-lg p-2 w-full bg-gray-50"
         />
       </div>
       <div className="space-x-4 flex items-center">
