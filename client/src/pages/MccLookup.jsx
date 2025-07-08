@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
@@ -12,6 +11,7 @@ export default function MccLookup() {
 
   const onSearchSubmit = (e) => {
   const handleSearch = (e) => {
+
     if (e) e.preventDefault();
     setDebounced(query.trim());
   };
@@ -29,9 +29,14 @@ export default function MccLookup() {
     let cancelled = false;
     const search = async () => {
       try {
+        const response = await fetch(
+          `${API_BASE_URL}/api/mcc?q=${encodeURIComponent(debounced)}`
+        );
+        const data = await response.json();
         const res = await fetch(`${API_BASE_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
         const res = await fetch(`${API_URL}/api/mcc?q=${encodeURIComponent(debounced)}`);
         const data = await res.json();
+
         if (!cancelled) setResults(data);
       } catch (err) {
         console.error('Search failed', err);
