@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongoose = require('mongoose');
 
 const app = express();
 app.use(cors());
@@ -29,6 +30,9 @@ async function connectDB() {
 }
 
 connectDB();
+mongoose.connect(MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error', err));
 
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to PayCodes API' });

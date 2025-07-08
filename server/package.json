@@ -12,6 +12,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "mongodb": "^6.5.0"
+    "mongoose": "^7.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1"
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
