@@ -1,13 +1,7 @@
 export default function Topbar() {
   return (
-    <header className="fixed top-0 left-64 right-0 h-14 bg-white/90 backdrop-blur border-b border-gray-200 shadow-sm flex items-center justify-end px-8 space-x-4 z-10">
-      <button className="text-gray-500 hover:text-gray-700" aria-label="Notifications">
-        🔔
-      </button>
-      <div className="flex items-center space-x-2">
-        <div className="w-8 h-8 bg-gray-200 rounded-full" />
-        <span className="text-sm font-medium text-gray-700">Admin</span>
-      </div>
+    <header className="fixed top-0 left-60 right-0 h-14 bg-[#343541] border-b border-[#40414f] flex items-center px-4 text-gray-100 z-10">
+      <h1 className="text-base font-medium">PayCodes</h1>
     </header>
   );
 }
