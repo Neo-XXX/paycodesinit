@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/paycodesdb';
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.set('strictQuery', false);
 mongoose.connect(MONGO_URI)
@@ -29,8 +29,8 @@ app.get('/api/mcc', async (req, res) => {
     const regex = new RegExp(q, 'i');
     const filter = {
       $or: [
-        // Match MCC codes that start with the query
-        { mcc_code: { $regex: `^${q}` } },
+        // Match MCC codes that contain the query
+        { mcc_code: regex },
         // Or categories that contain the query, case-insensitive
         { category: regex }
       ]
