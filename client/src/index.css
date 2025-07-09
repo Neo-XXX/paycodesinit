@@ -4,9 +4,7 @@
 
 @layer base {
   body {
-    font-family: theme('fontFamily.sans');
-    background-color: #f9fafb;
-    color: #374151;
+    @apply bg-gray-50 text-gray-800 font-sans antialiased;
     line-height: 1.5;
   }
 }
