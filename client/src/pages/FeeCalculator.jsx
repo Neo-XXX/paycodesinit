@@ -16,14 +16,14 @@ export default function FeeCalculator() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <form onSubmit={calculate} className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 space-y-4">
+      <form onSubmit={calculate} className="bg-[#444654] p-8 rounded-lg shadow-sm border border-[#343541] space-y-4 text-gray-100">
         <div>
           <label className="block mb-1">Monthly Volume</label>
           <input
             type="number"
             value={volume}
             onChange={(e) => setVolume(e.target.value)}
-            className="border border-gray-300 rounded-md p-3 w-full"
+            className="border border-gray-500 rounded-md p-3 w-full bg-transparent"
           />
         </div>
         <div>
@@ -32,7 +32,7 @@ export default function FeeCalculator() {
             type="number"
             value={ticket}
             onChange={(e) => setTicket(e.target.value)}
-            className="border border-gray-300 rounded-md p-3 w-full"
+            className="border border-gray-500 rounded-md p-3 w-full bg-transparent"
           />
         </div>
         <button
@@ -42,7 +42,7 @@ export default function FeeCalculator() {
           Calculate
         </button>
       </form>
-      <div className="bg-white p-8 rounded-lg shadow-sm border border-gray-200 flex flex-col justify-center items-center">
+      <div className="bg-[#444654] p-8 rounded-lg shadow-sm border border-[#343541] flex flex-col justify-center items-center text-gray-100">
         {rate !== null ? (
           <>
             <div className="text-lg">

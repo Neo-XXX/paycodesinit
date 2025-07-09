@@ -3,10 +3,10 @@ import Topbar from './Topbar';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
+    <div className="min-h-screen bg-[#343541] font-sans text-gray-100">
       <Sidebar />
       <Topbar />
-      <main className="pt-24 pl-64 p-8 max-w-5xl mx-auto space-y-6">{children}</main>
+      <main className="pt-20 pl-60 p-6 max-w-3xl mx-auto space-y-6">{children}</main>
     </div>
   );
 }
