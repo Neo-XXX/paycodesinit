@@ -9,8 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
-// Default to the local `mcc_codes` database if no URI is provided
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/mcc_codes';
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.set('strictQuery', false);
 mongoose.connect(MONGO_URI)
