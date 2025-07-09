@@ -3,10 +3,12 @@ import Topbar from './Topbar';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="app-layout">
       <Sidebar />
-      <Topbar />
-      <main className="main-content">{children}</main>
+      <div className="content-area">
+        <Topbar />
+        <main className="main-content">{children}</main>
+      </div>
     </div>
   );
 }
