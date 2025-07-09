@@ -11,6 +11,15 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
+// Validate the MongoDB connection string before attempting to connect
+if (
+  !MONGO_URI ||
+  !/^mongodb(?:\+srv)?:\/\//.test(MONGO_URI.trim())
+) {
+  console.error('Error: MONGO_URI environment variable is missing or malformed.');
+  process.exit(1);
+}
+
 mongoose.set('strictQuery', false);
 mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB connected'))
