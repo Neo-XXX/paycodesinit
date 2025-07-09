@@ -52,7 +52,7 @@ export default function MccLookup() {
   };
 
   return (
-    <div className="bg-[#444654] p-8 rounded-lg shadow-sm border border-[#343541] text-gray-100">
+    <div className="card">
       <form onSubmit={handleSearch} className="flex space-x-3">
         <input
           type="text"
@@ -61,17 +61,14 @@ export default function MccLookup() {
           onChange={(e) => setQuery(e.target.value)}
           className="border border-gray-500 rounded-md p-3 w-full bg-transparent"
         />
-        <button
-          type="submit"
-          className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md px-4 py-2"
-        >
+        <button type="submit" className="btn-primary">
           Search
         </button>
       </form>
 
       <div className="mt-6 space-y-3">
         {results.map((item) => (
-          <div key={item._id} className="border border-[#343541] rounded-md p-3">
+          <div key={item._id} className="border border-[#e5e7eb] rounded-md p-3">
             <p className="font-medium">MCC {item.mcc_code}</p>
             <p className="text-sm">{item.category}</p>
           </div>

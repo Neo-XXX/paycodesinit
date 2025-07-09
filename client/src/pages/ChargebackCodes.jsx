@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function ChargebackCodes() {
   const [query, setQuery] = useState('');
   return (
-    <div className="bg-[#444654] p-8 rounded-lg shadow-sm border border-[#343541] space-y-4 text-gray-100">
+    <div className="card space-y-4">
       <input
         type="text"
         placeholder="Search code"

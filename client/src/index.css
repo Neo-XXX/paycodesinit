@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#343541] text-gray-100 font-sans antialiased;
+    @apply bg-gray-50 text-gray-900 font-sans antialiased;
     line-height: 1.5;
   }
 }
