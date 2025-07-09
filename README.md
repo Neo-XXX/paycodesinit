@@ -16,13 +16,17 @@ cd server && npm install
 cd ../client && npm install
 ```
 
+2. Start the Express server (`npm run dev` inside `server/`):
+
 ```bash
+cd server
 npm run dev
 ```
 
-3. In another terminal, start the React development server:
+3. In another terminal, run the React development server (`npm run dev` inside `client/`):
 
 ```bash
+cd client
 npm run dev
 ```
 
