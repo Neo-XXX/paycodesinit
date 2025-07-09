@@ -16,7 +16,7 @@ export default function FeeCalculator() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <form onSubmit={calculate} className="bg-[#444654] p-8 rounded-lg shadow-sm border border-[#343541] space-y-4 text-gray-100">
+      <form onSubmit={calculate} className="card space-y-4">
         <div>
           <label className="block mb-1">Monthly Volume</label>
           <input
@@ -35,14 +35,11 @@ export default function FeeCalculator() {
             className="border border-gray-500 rounded-md p-3 w-full bg-transparent"
           />
         </div>
-        <button
-          type="submit"
-          className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md px-4 py-2"
-        >
+        <button type="submit" className="btn-primary">
           Calculate
         </button>
       </form>
-      <div className="bg-[#444654] p-8 rounded-lg shadow-sm border border-[#343541] flex flex-col justify-center items-center text-gray-100">
+      <div className="card flex flex-col justify-center items-center">
         {rate !== null ? (
           <>
             <div className="text-lg">
