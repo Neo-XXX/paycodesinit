@@ -88,19 +88,19 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <aside className="fixed top-0 left-0 h-screen w-20 bg-white border-r border-gray-200 shadow-sm flex flex-col items-center py-6 space-y-8 z-20">
-      <h2 className="text-lg font-bold">PC</h2>
-      <nav className="flex flex-col space-y-6 mt-4">
+    <aside className="fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-200 shadow-sm flex flex-col p-6 space-y-8 z-20">
+      <h2 className="text-2xl font-bold text-indigo-600">PayCodes</h2>
+      <nav className="flex-1 flex flex-col space-y-2 mt-4">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
             to={item.to}
             className={({ isActive }) =>
-              `flex flex-col items-center text-xs hover:text-indigo-600 ${isActive ? 'text-indigo-600 font-medium' : 'text-gray-500'}`
+              `flex items-center space-x-3 rounded-md px-3 py-2 text-sm hover:bg-gray-100 ${isActive ? 'bg-gray-100 text-indigo-600' : 'text-gray-600'}`
             }
           >
             <item.icon />
-            <span className="mt-1">{item.label}</span>
+            <span>{item.label}</span>
           </NavLink>
         ))}
       </nav>

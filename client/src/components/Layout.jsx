@@ -6,7 +6,7 @@ export default function Layout({ children }) {
     <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
       <Sidebar />
       <Topbar />
-      <main className="pt-16 pl-20 p-8 space-y-6">{children}</main>
+      <main className="pt-24 pl-64 p-8 max-w-5xl mx-auto space-y-6">{children}</main>
     </div>
   );
 }
