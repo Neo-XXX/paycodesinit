@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+//old line below- const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'; - changing to env.MONGO_URI
+const API_URL = import.meta.env.MONGO_URI || 'http://localhost:5000';
 
 export default function MccLookup() {
   const [query, setQuery] = useState('');
