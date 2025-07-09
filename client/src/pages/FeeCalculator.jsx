@@ -35,7 +35,10 @@ export default function FeeCalculator() {
             className="border border-gray-300 rounded-md p-2 w-full"
           />
         </div>
-        <button type="submit" className="bg-indigo-600 text-white rounded-md px-4 py-2">
+        <button
+          type="submit"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md px-4 py-2"
+        >
           Calculate
         </button>
       </form>

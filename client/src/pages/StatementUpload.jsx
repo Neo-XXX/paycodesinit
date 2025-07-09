@@ -16,7 +16,7 @@ export default function StatementUpload() {
   return (
     <div className="space-y-6">
       <div
-        className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center bg-white"
+        className="border-2 border-dashed border-gray-300 rounded-lg p-10 text-center bg-white shadow-sm"
         onDragOver={(e) => e.preventDefault()}
         onDrop={handleDrop}
       >

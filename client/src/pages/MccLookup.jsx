@@ -63,7 +63,7 @@ export default function MccLookup() {
         />
         <button
           type="submit"
-          className="bg-indigo-600 text-white rounded-md px-4"
+          className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md px-4 py-2"
         >
           Search
         </button>
