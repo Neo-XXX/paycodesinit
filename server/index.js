@@ -45,6 +45,11 @@ app.get('/api/mcc', async (req, res) => {
       ]
     };
 
+    // If the search looks like a number, also check for an exact numeric match
+    if (/^\d+$/.test(q)) {
+      filter.$or.push({ mcc_code: Number(q) });
+    }
+
     const results = await Mcc.find(filter).limit(20);
     res.json(results);
   } catch (err) {
