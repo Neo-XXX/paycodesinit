@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const MccSchema = new mongoose.Schema({
-  mcc_code: String,
+  // Some records may store the code as a number, others as a string
+  mcc_code: mongoose.Schema.Types.Mixed,
   category: String
 });
 
